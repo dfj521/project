@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script>
+        //检查用户名是否存在
+        function checkName() {
+            /**
+             * Ajax的三板斧
+             * 1.获取请求参数
+             * 2.参数校验（可以省略）
+             * 3.发送Ajax
+             */
+            //使用JQuery的id选择器获取input里面的值
+            //1.获取参数
+            var username = $("#username").val();
+            //2.参数校验专指前台校验
+            //2.1.进入函数后先清空内容
+            $("#name_span").html("");
+            //2.2.判断如果内容为空
+            if (username == "") {
+                //2.3.当用户名为空时提示请输入账号名
+                $("#name_span").html("请输入账号名");
+                return;
+            }
+            //3.发送Ajax
+            $.ajax({
+                url: "http://localhost:8080/checkName",
+                type: "post",
+                dataType: "json",
+                data: {"username":username},
+                success: function (result) {
+                    //Ajax的成功回调函数，result就是后台controller传过来的json
+                    $("#name_span").html(result.message);
+                },
+                error: function () {
+                    //Ajax的失败回调函数
+                    alert("系统未知异常");
+                }
+            })
+
+        }
+    </script>
+</head>
+<body>
+<form>
+    账号：<input id="username" name="username" onblur="checkName();">
+    <span id="name_span"></span><br>
+    密码：<input type="password" name="password" required><br>
+    <button onclick="">登录</button>
+</form>
+</body>
+</html>

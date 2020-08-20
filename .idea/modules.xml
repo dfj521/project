@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/day41/day41.iml" filepath="$PROJECT_DIR$/day41/day41.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day41.1/day41.1.iml" filepath="$PROJECT_DIR$/day41.1/day41.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day42/day42.iml" filepath="$PROJECT_DIR$/day42/day42.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day42.1/day42.1.iml" filepath="$PROJECT_DIR$/day42.1/day42.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day43/day43.iml" filepath="$PROJECT_DIR$/day43/day43.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day43.1/day43.1.iml" filepath="$PROJECT_DIR$/day43.1/day43.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day44/day44.iml" filepath="$PROJECT_DIR$/day44/day44.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day44.1/day44.1.iml" filepath="$PROJECT_DIR$/day44.1/day44.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day45/day45.iml" filepath="$PROJECT_DIR$/day45/day45.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day45.1/day45.1.iml" filepath="$PROJECT_DIR$/day45.1/day45.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day46/day46.iml" filepath="$PROJECT_DIR$/day46/day46.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day47/day47.iml" filepath="$PROJECT_DIR$/day47/day47.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day48/day48.iml" filepath="$PROJECT_DIR$/day48/day48.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day49/day49.iml" filepath="$PROJECT_DIR$/day49/day49.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day49.1/day49.1.iml" filepath="$PROJECT_DIR$/day49.1/day49.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day50.1/day50.1.iml" filepath="$PROJECT_DIR$/day50.1/day50.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day51/day51.iml" filepath="$PROJECT_DIR$/day51/day51.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/project.iml" filepath="$PROJECT_DIR$/.idea/project.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/day41" />
+    <file type="web" url="file://$PROJECT_DIR$/day41.1" />
+    <file type="web" url="file://$PROJECT_DIR$/day42" />
+    <file type="web" url="file://$PROJECT_DIR$/day42.1" />
+    <file type="web" url="file://$PROJECT_DIR$/day43" />
+    <file type="web" url="file://$PROJECT_DIR$/day43.1" />
+    <file type="web" url="file://$PROJECT_DIR$/day44" />
+    <file type="web" url="file://$PROJECT_DIR$/day44.1" />
+    <file type="web" url="file://$PROJECT_DIR$/day45" />
+    <file type="web" url="file://$PROJECT_DIR$/day45.1" />
+    <file type="web" url="file://$PROJECT_DIR$/day46" />
+    <file type="web" url="file://$PROJECT_DIR$/day47" />
+    <file type="web" url="file://$PROJECT_DIR$/day48" />
+    <file type="web" url="file://$PROJECT_DIR$/day49" />
+    <file type="web" url="file://$PROJECT_DIR$/day49.1" />
+    <file type="web" url="file://$PROJECT_DIR$/day50.1" />
+    <file type="web" url="file://$PROJECT_DIR$/day51" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/day41/pom.xml" />
+        <option value="$PROJECT_DIR$/day42/pom.xml" />
+        <option value="$PROJECT_DIR$/day43/pom.xml" />
+        <option value="$PROJECT_DIR$/day44/pom.xml" />
+        <option value="$PROJECT_DIR$/day45/pom.xml" />
+        <option value="$PROJECT_DIR$/day46/pom.xml" />
+        <option value="$PROJECT_DIR$/day47/pom.xml" />
+        <option value="$PROJECT_DIR$/day48/pom.xml" />
+        <option value="$PROJECT_DIR$/day49/pom.xml" />
+        <option value="$PROJECT_DIR$/day51/pom.xml" />
+        <option value="$PROJECT_DIR$/day41.1/pom.xml" />
+        <option value="$PROJECT_DIR$/day42.1/pom.xml" />
+        <option value="$PROJECT_DIR$/day43.1/pom.xml" />
+        <option value="$PROJECT_DIR$/day44.1/pom.xml" />
+        <option value="$PROJECT_DIR$/day45.1/pom.xml" />
+        <option value="$PROJECT_DIR$/day49.1/pom.xml" />
+        <option value="$PROJECT_DIR$/day50.1/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_14" project-jdk-name="14" project-jdk-type="JavaSDK" />
+</project>

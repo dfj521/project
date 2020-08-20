@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/data/jpa https://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+">
+
+    <!--加载jdbc配置-->
+    <util:properties id="jdbc" location="classpath:jdbc.properties"/>
+
+    <!--配置数据源-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="#{jdbc.driverClassName}"/>
+        <property name="url" value="#{jdbc.url}"/>
+        <property name="username" value="#{jdbc.username}"/>
+        <property name="password" value="#{jdbc.password}"/>
+    </bean>
+
+    <!--开启spring注解扫描-->
+    <context:component-scan base-package="com.dfj"/>
+
+    <!--配置实体类管理工厂-->
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <!--设置jpa适配器-->
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+        <!--jpa的配置-->
+        <property name="packagesToScan" value="com.dfj"/>
+        <!--采用注解的方式扫描包下的Java类-->
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.ejb.naming_strategy">org.springframework.cfg.ImprovedNamingStrategy</prop>
+                <!--Hibernate中实体映射时的命名规范-->
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <!--执行SQL是否打印-->
+                <prop key="hibernate.show_sql">true</prop>
+                <!--执行SQL是否格式化-->
+                <prop key="hibernate.format_sql">true</prop>
+                <!--如果没有是否创建-->
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--配置springData需要扫描的包-->
+    <jpa:repositories base-package="com.dfj" entity-manager-factory-ref="entityManagerFactory"/>
+
+    <!--配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <!--配置支持注解的事务-->
+    <tx:annotation-driven/>
+</beans>

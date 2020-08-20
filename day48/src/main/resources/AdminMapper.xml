@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dfj.dao.AdminMapper">
+    <update id="update">
+        update admin
+        <set>
+            <if test="username != null">
+                username=#{username},
+            </if>
+            <if test="password != null">
+                password=#{password},
+            </if>
+            <if test="email != null">
+                email=#{email},
+            </if>
+            <if test="telephone != null">
+                telephone=#{telephone}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--如果没有名字则查询所有，如果有则查询对应的数据-->
+    <select id="findByName" resultType="com.dfj.entity.Admin">
+        select * from admin
+        <if test="username != null and username != ''">
+            where username = #{username}
+        </if>
+    </select>
+    <!--查询大于3的用户信息，如果用户的id大于3就查大于用户id的信息-->
+    <select id="findById" resultType="com.dfj.entity.Admin">
+        select * from admin where
+        <choose>
+            <when test="id > 3">
+                id >= #{id}
+            </when>
+            <otherwise>
+                id >= 3
+            </otherwise>
+        </choose>
+    </select>
+    <select id="findByNameAndPwd" resultType="com.dfj.entity.Admin">
+        select * from admin
+        <where>
+        <if test="username != null">
+            and username = #{username}
+        </if>
+        <if test="password != null">
+            and password = #{password}
+        </if>
+        </where>
+    </select>
+    <select id="findByEmailOrTel" resultType="com.dfj.entity.Admin">
+        select * from admin
+        <trim prefix="where" prefixOverrides="or|and">
+            <if test="email != null">
+                email = #{email}
+            </if>
+            <if test="telephone != null">
+                or telephone = #{telephone}
+            </if>
+        </trim>
+    </select>
+    <!--查询id为4，5 的信息-->
+    <select id="findByIds" resultType="com.dfj.entity.Admin">
+        select * from admin where id in 
+        <foreach collection="ids" open="(" item="id" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+</mapper>

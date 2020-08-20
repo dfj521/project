@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dfj.dao.UserInfoDao">
+    <select id="findAll" resultType="com.dfj.entity.UserInfo">
+        select * from userinfo
+    </select>
+    <select id="findById" resultType="com.dfj.entity.UserInfo">
+        select * from userinfo where id = #{id}
+    </select>
+    <select id="save">
+        insert into userinfo values(null,#{age},#{name})
+    </select>
+    <update id="updateById">
+        update userinfo set age = #{age}, name = #{name} where id = #{id}
+    </update>
+    <delete id="deleteById">
+        delete from userinfo where id = #{id}
+    </delete>
+</mapper>

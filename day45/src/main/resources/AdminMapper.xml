@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dfj.dao.AdminDao">
+    <select id="findAll" resultType="com.dfj.entity.Admin">
+        select * from admin
+    </select>
+    <select id="findByNameAndAge" resultType="com.dfj.entity.Admin">
+        select * from admin where name = #{name} and password = #{password}
+    </select>
+    <select id="findByNameAmdTel" resultType="com.dfj.entity.Admin">
+        select * from admin where name = #{name} and telephone = #{telephone}
+    </select>
+</mapper>

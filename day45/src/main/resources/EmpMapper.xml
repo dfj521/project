@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace: 命名空间 用来区分sql对应的空间-->
+<mapper namespace="com.dfj.dao.EmpMapper">
+    <!--select: 查询语句的标签 id: sqlId 也就是Java的Mapper文件中的方法名
+        resultType: sql查询的返回值 List<Emp>-->
+    <select id="findAll" resultType="com.dfj.entity.Emp">
+        select id,name,age,gender,salary from emp
+    </select>
+    
+    <!--parameterType: 参数类型 参数的注入用#而不用$，防止注入攻击-->
+    <select id="findById" parameterType="int" resultType="com.dfj.entity.Emp">
+        select id,name,age,gender,salary from emp where id = #{id}
+    </select>
+    
+    <select id="findByName" parameterType="string" resultType="com.dfj.entity.Emp">
+        select id,name,age,gender,salary from emp where name = #{name}
+    </select>
+
+    <sql id="selectEmp">
+        select id,name,age,gender,salary from emp
+    </sql>
+    <select id="findByCondition" parameterType="com.dfj.entity.Emp" resultType="com.dfj.entity.Emp">
+        <include refid="selectEmp"/>
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="age != null">
+                and age = #{age}
+            </if>
+            <if test="gender != null">
+                and gender = #{gender}
+            </if>
+            <if test="salary != null">
+                and salary = #{salary}
+            </if>
+        </where>
+    </select>
+
+    <select id="findByIds" parameterType="list" resultType="com.dfj.entity.Emp">
+        <include refid="selectEmp"/>
+        <where>
+            <foreach collection="list" open="id in("  item="id" separator="," close=")">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
+    <select id="findByNameAndAge" parameterType="map" resultType="com.dfj.entity.Emp">
+        select * from emp where name = #{name} and age = #{age}
+    </select>
+
+    <!--返回值是map-->
+    <select id="findByGender" parameterType="string" resultType="map">
+        select * from emp where gender = #{gender}
+    </select>
+    
+    <insert id="save" parameterType="com.dfj.entity.Emp">
+        insert into emp values(null,#{name},#{age},#{gender},#{salary})
+    </insert>
+
+    <delete id="deleteById" parameterType="integer">
+        delete from emp where id = #{id}
+    </delete>
+
+    <update id="updateById" parameterType="com.dfj.entity.Emp">
+        update emp set name = #{name}, age = #{age}, gender = #{gender}, salary = #{salary} where id = #{id}
+    </update>
+</mapper>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+        function findAll() {
+            $("#tb").html("");
+            $.ajax({
+                url: "http://localhost:8080/admin.do",
+                type: "get",
+                data: {},
+                dataType: "json",
+                success: function (adminList) {
+                    for (let i = 0; i < adminList.length; i++) {
+                        $("#tb").append("" +
+                            "<tr>" +
+                            "   <td>"+adminList[i].id+"</td>" +
+                            "   <td>"+adminList[i].username+"</td>" +
+                            "   <td>"+adminList[i].password+"</td>" +
+                            "   <td>"+adminList[i].email+"</td>" +
+                            "   <td>"+adminList[i].telephone+"</td>" +
+                            "</tr>")
+                    }
+                }
+            })
+        }
+        function findById() {
+            $("#tb").html("");
+            $.ajax({
+                url: "http://localhost:8080/admin/" + $("#checkId").val() + ".do",
+                type: "get",
+                data: {},
+                dataType: "json",
+                success: function (admin) {
+                    $("#tb").append("" +
+                        "<tr>" +
+                        "   <td>"+admin.id+"</td>" +
+                        "   <td>"+admin.username+"</td>" +
+                        "   <td>"+admin.password+"</td>" +
+                        "   <td>"+admin.email+"</td>" +
+                        "   <td>"+admin.telephone+"</td>" +
+                        "</tr>")
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<button onclick="findAll()">查询全部</button>
+<input type="number" id="checkId">
+<button onclick="findById()">根据Id查询</button>
+<table border="1" cellpadding="0" cellspacing="0">
+    <tr>
+        <th>id</th>
+        <th>username</th>
+        <th>password</th>
+        <th>email</th>
+        <th>telephone</th>
+    </tr>
+    <tbody  id="tb">
+    </tbody>
+</table>
+</body>
+</html>

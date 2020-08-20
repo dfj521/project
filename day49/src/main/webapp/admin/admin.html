@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script>
+        function findAll() {
+            $.ajax({
+                url: "http://localhost:8080/admin",
+                type: "get",
+                success: function (adminList) {
+                    alert(adminList)
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<button onclick="findAll()">查询全部</button>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dfj.dao.AdminDao">
+    <insert id="save">
+        insert into admin values(null,#{name},#{password},#{email},#{telephone})
+    </insert>
+    <update id="update">
+        update admin set name=#{name}, password=#{password}, email=#{email}, telephone=#{telephone}
+        where id=#{id}
+    </update>
+    <delete id="deleteById">
+        delete from admin where id = #{id}
+    </delete>
+
+    <select id="findAll" resultType="com.dfj.entity.Admin">
+        select * from admin
+    </select>
+    <select id="findById" resultType="com.dfj.entity.Admin">
+        select * from admin where id = #{id}
+    </select>
+</mapper>

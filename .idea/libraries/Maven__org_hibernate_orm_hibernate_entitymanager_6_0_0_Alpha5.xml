@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.hibernate.orm:hibernate-entitymanager:6.0.0.Alpha5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../soft/apache-maven-3.6.3/repository/org/hibernate/orm/hibernate-entitymanager/6.0.0.Alpha5/hibernate-entitymanager-6.0.0.Alpha5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../soft/apache-maven-3.6.3/repository/org/hibernate/orm/hibernate-entitymanager/6.0.0.Alpha5/hibernate-entitymanager-6.0.0.Alpha5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../soft/apache-maven-3.6.3/repository/org/hibernate/orm/hibernate-entitymanager/6.0.0.Alpha5/hibernate-entitymanager-6.0.0.Alpha5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

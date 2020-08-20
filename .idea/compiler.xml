@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day51" />
+        <module name="day41.1" />
+        <module name="day42.1" />
+        <module name="day43.1" />
+        <module name="day44.1" />
+        <module name="day45.1" />
+        <module name="day49.1" />
+        <module name="day49" />
+        <module name="day48" />
+        <module name="day47" />
+        <module name="day46" />
+        <module name="day45" />
+        <module name="day44" />
+        <module name="day43" />
+        <module name="day42" />
+        <module name="day41" />
+        <module name="day50.1" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="day41" target="1.7" />
+      <module name="day41.1" target="1.7" />
+      <module name="day42" target="1.7" />
+      <module name="day42.1" target="1.7" />
+      <module name="day43" target="1.7" />
+      <module name="day43.1" target="1.7" />
+      <module name="day44" target="14" />
+      <module name="day44.1" target="14" />
+      <module name="day45" target="14" />
+      <module name="day45.1" target="14" />
+      <module name="day46" target="1.8" />
+      <module name="day47" target="1.8" />
+      <module name="day48" target="1.8" />
+      <module name="day49" target="1.8" />
+      <module name="day49.1" target="1.8" />
+      <module name="day50.1" target="1.8" />
+      <module name="day51" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
